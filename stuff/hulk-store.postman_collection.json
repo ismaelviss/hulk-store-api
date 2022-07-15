@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "ea5a0cf2-5f0c-47be-bc27-ffd7f513fbf6",
+		"name": "hulk-store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZmlyc3ROYW1lIjoiSnVhbml0byIsImxhc3ROYW1lIjoiUGVyYWx0YSIsImVtYWlsIjoidXNlckB0b2RvMS5jb20iLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJleHAiOjE2NTc4Njk3NjF9.KGDb2trkIgNZF-NVBEC4MvQ1ViI-YbaDrO5CsP5NkGDhfo5cZFCYDG0uBhx0qB2WOw4gDHZJjm978QO12k2dWA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.2.101:8080/v1/product",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"101"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/product/{id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2Y2V2YWxsbyIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dLCJleHAiOjE2NTc4NjEyODR9.LL-fe60UFmMSgoncVRpaj3vup4DwtwJ-Oe1DxX0QWPi2d3sf9cuAXERo4ufNTCGwwAvVR_7ccTPDqSYTb07Ykw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.2.101:8080/v1/product/1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"101"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/store/order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZmlyc3ROYW1lIjoiSnVhbml0byIsImxhc3ROYW1lIjoiUGVyYWx0YSIsImVtYWlsIjoidXNlckB0b2RvMS5jb20iLCJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJleHAiOjE2NTc4Njk5MDR9.MxbRve748l4f5wHeTKxujAtsUH2_Iw1zBEy_fdeBmSqKddNAFA6Xedqxzs2j8-FOVff7SpbNnxUb7EB-Od1m1A",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"productId\" : 1,\n        \"quantity\" : 5,\n        \"shipDate\" : \"2022-07-14T13:14:00\",\n        \"status\" : \"complete\",\n        \"complete\" : true\n    },\n    {\n        \"productId\" : 2,\n        \"quantity\" : 5,\n        \"shipDate\" : \"2022-07-14T13:14:00\",\n        \"status\" : \"complete\",\n        \"complete\" : true\n    }\n]   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.101:8080/v1/store/order",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"101"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"store",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/register user1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 0,\n    \"email\": \"vacc94@gmail.com\",\n    \"firstName\": \"Alexander\",\n    \"lastName\": \"Cevallos\",\n    \"password\": \"12345678\",\n    \"phone\": \"0912345678\",\n    \"roles\": [\n        {\n            \"id\" : 0,\n            \"name\": \"ROLE_ADMIN\"\n        }\n    ],\n    \"userStatus\": 0,\n    \"username\": \"vcevallo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.101:8080/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"101"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/register user2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 0,\n    \"email\": \"ismaelviss@gmail.com\",\n    \"firstName\": \"Elvis\",\n    \"lastName\": \"Salvatierra\",\n    \"password\": \"elpassword\",\n    \"phone\": \"0912345678\",\n    \"roles\": [\n        {\n            \"id\" : 0,\n            \"name\": \"ROLE_USER\"\n        }\n    ],\n    \"userStatus\": 0,\n    \"username\": \"esalvati\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.101:8080/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"101"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/login user1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"user\",\n    \"password\" : \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.101:8080/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"101"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/auth/login user2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.101:8080/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"101"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
